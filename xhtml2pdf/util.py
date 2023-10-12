@@ -263,7 +263,8 @@ def getSize(value, relative=0, base=None, default=0.0):
         elif relative:
             if value[-3:] == 'rem':  # XXX
                 # 1rem = 1 * fontSize
-                return float(value[:-3].strip()) * relative
+                THIS_SHOUD_BE_THE_ROOT_FONT_SIZE = 16 * dpi96
+                return float(value[:-3].strip()) * THIS_SHOUD_BE_THE_ROOT_FONT_SIZE
             elif value[-2:] == 'em':  # XXX
                 # 1em = 1 * fontSize
                 return float(value[:-2].strip()) * relative
